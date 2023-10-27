@@ -22,7 +22,6 @@ export const searchUser = async (text) => {
   return response.data.items;
 };
 
-console.log(searchUser);
 //  GET USER AND REPOS
 
 export const getUserWithRepos = async (login) => {
