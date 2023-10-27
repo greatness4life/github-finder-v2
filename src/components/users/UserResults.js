@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
-import Spinner from "../layout/Spinner";
 import UserItem from "./UserItem";
 import GithubContext from "../../context/github/GithubContext";
 import ResultPagination from "../../pages/ResultPagination";
+import CardLayout from "../layout/CardLayout";
 
 const UserResults = () => {
   const { users, loading } = useContext(GithubContext);
@@ -21,7 +21,11 @@ const UserResults = () => {
       </>
     );
   } else {
-    return <Spinner />;
+    return (
+      <div className="grid grid-cols-1 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
+        <CardLayout cards={20} />;
+      </div>
+    );
   }
 };
 export default UserResults;
